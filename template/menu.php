@@ -23,7 +23,7 @@
         <a class="nav-link" href="views/index.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="views/ventas.php">Ventas</a>
+        <a class="nav-link" href="venta.php">Ventas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="index.php">Productos</a>

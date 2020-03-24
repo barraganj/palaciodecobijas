@@ -7,9 +7,9 @@
 	if(isset($_POST['create']))
 	{
 		if($productos->newproducto($_POST)){
-			header('location: ../views/users/index.php?page=new&success=true');
+			header('location: ../index.php?page=new&success=true');
 		}else{
-			header('location: ../views/users/index.php?page=new&error=true');
+			header('location: ../index.php?page=new&error=true');
 		}
 	}
 
@@ -17,16 +17,16 @@
 	if(isset($_POST['edit']))
 	{
 		if($productos->setEditproducto($_POST)){
-			header('location: ./index.php?page=edit&ID='.$_POST['ID'].'&success=true');
+			header('location: ../index.php?page=edit&ID='.$_POST['ID'].'&success=true');
 		}else{
-			header('location: ./index.php?page=edit&ID='.$_POST['ID'].'&error=true');
+			header('location: ../index.php?page=edit&ID='.$_POST['ID'].'&error=true');
 		}
 	}
 
-	//Request: editar usuario
+	//Request: editar producto
 	if(isset($_GET['delete']))
 	{
-		if($users->deleteproducto($_GET['ID'])){
+		if($productos->deleteproducto($_GET['ID'])){
 			// header('location: ../index.php?page=users&success=true');
 			echo json_encode(["success"=>true]);
 		}else{

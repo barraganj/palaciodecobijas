@@ -1,18 +1,18 @@
 <?php
 
-	include './models/producto.php';
-	$producto  = new producto();
+	include './models/venta.php';
+	$venta  = new venta();
 
 	//Si utiliza el filtro de busqueda
 	if(isset($search)){
-		$productos = $producto->getproductoBySearch($dataSearch);
+		$ventas = $venta->getventaBySearch($dataSearch);
 	}else{
-		//Trae todos los usuarios
+		//Trae todos las ventas 
 		$dataSearch=NULL;
-		$productos =$producto->getproductos();
+		$ventas =$venta->getventa();
 	}
 
-	$title="Listado de Productos";
+	$title="Listado de ventas";
 	include 'toolbar.php';
 ?>
 <div class="row">
@@ -22,7 +22,7 @@
 </div>
 <div class="row">
 	<div class="col">
-		<form action="./index.php" method="post" accept-charset="utf-8" class="form-inline">
+		<form action="./venta.php" method="post" accept-charset="utf-8" class="form-inline">
 			<div class="form-group mx-sm-3 mb-2">
     			<input type="text" class="form-control" name="dataSearch" autofocus required placeholder="Buscar" value="<?php echo $dataSearch;  ?>">
   			</div>
@@ -31,36 +31,46 @@
 	</div>
 </div>
 <div class="table-responsive">
+
+
+
+
+
+
+
 		<table class="table table-striped table-bordered table-hover">
 			<thead class="thead-dark">
-				<!-- <th>id</th> -->
-				<th class="text-center">Nombre</th>
-				<th class="text-center">Precio</th>
-				<th class="text-center">Descripcion</th>
-				<th class="text-center">Imagen</th>
+				<th class="text-center">ClaveTransaccion</th>
+				<th class="text-center">PaypalDatos</th>
+				<th class="text-center">Fecha</th>
+				<th class="text-center">Correo</th>
+				<th class="text-center">Total</th>
+				<th class="text-center">Statu</th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 			</thead>
 			<tbody>
 				<?php
 
-					if(count($productos)>0){
+					if(count($ventas)>0){
 
-						foreach ($productos as $column =>$value) {
+						foreach ($ventas as $column =>$value) {
 				?>
 
 							<tr id="row<?php echo $value['ID']; ?>">
-								<td><?php echo $value['Nombre']; ?></td>
-								<td><?php echo $value['Precio']; ?></td>
-								<td><?php echo $value['Descripcion']; ?></td>
-								<td><?php echo $value['Imagen']; ?></td>
+								<td><?php echo $value['ClaveTransaccion']; ?></td>
+								<td><?php echo $value['PaypalDatos']; ?></td>
+								<td><?php echo $value['Fecha']; ?></td>
+								<td><?php echo $value['Correo']; ?></td>
+								<td><?php echo $value['Total']; ?></td>
+								<td><?php echo $value['Statu']; ?></td>
 								<td class="text-center">
-								<a href="./index.php?page=edit&ID=<?php echo $value['ID'] ?>" title="editar producto: <?php echo $value['Nombre'] ?>">
+								<a href="./venta.php?page=edit&ID=<?php echo $value['ID'] ?>" title="editar venta: <?php echo $value['ClaveTransaccion'] ?>">
 										<i class="material-icons btn_edit">edit</i>
 									</a>
 								</td>
 								<td class="text-center">
-									<a href="./index.php" onclick="btnDeleteproducto(<?php echo $value['ID' ] ?>)" ID="btnDeleteproducto" title="Borrar producto: <?php echo $value['Nombre']  ?>">
+									<a href="./venta.php" onclick="btnDeleteventa(<?php echo $value['ID' ] ?>)" ID="btnDeleteventa" title="Borrar venta: <?php echo $value['ClaveTransaccion']  ?>">
 										<i class="material-icons btn_delete">delete_forever</i>
 									</a>
 								</td>
@@ -72,7 +82,7 @@
 					<tr>
 						<td colspan="5">
 							<div class="alert alert-info">
-								No se encontraron productos.
+								No se encontraron ventas.
 							</div>
 						</td>
 					</tr>
@@ -90,8 +100,8 @@
 	</div>
 <script type="text/javascript">
 
-	function btnDeleteproducto(ID){
-		if(confirm("Esta seguro de eliminar el producto?")){
+	function btnDeleteventa(ID){
+		if(confirm("Esta seguro de eliminar la venta ?")){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
@@ -100,7 +110,7 @@
 				var msgDanger   = document.getElementById('msgDanger');
 				if(response.success){
 					msgSuccess.style.display = 'inherit';
-					msgSuccess.innerHTML     = 'El producto ha sido borrado de la base de datos.';
+					msgSuccess.innerHTML     = 'La venta  ha sido borrado de la base de datos.';
 					msgDanger.style.display  = 'none';
 
 					var row    = document.getElementById('row'+ID);
@@ -115,7 +125,7 @@
 				}
 			}
 			};
-			xhttp.open("GET", "./controllers/producto.php?delete=true&ID="+ID, true);
+			xhttp.open("GET", "./controllers/venta.php?delete=true&ID="+ID, true);
 			xhttp.send();
 		}
 	}

@@ -7,8 +7,7 @@
 		$search     =true;
 		$dataSearch =$_POST['dataSearch'];
 	}
-	include 'views/users/'.$page.'.php';
+	include 'views/venta/'.$page.'.php';
 	include 'views/a/footer.php';
 	include 'views/template/footer.php';
-	?>
-
+?>

@@ -3,7 +3,7 @@
 	/**
 	*
 	*/
-	class producto
+	class venta
 	{
 		private $conn;
 		private $link;
@@ -14,10 +14,10 @@
 			$this->link   = $this->conn->conectarse();
 		}
 
-		//Trae todos los usuarios registrados
-		public function getproductos()
+		//Trae todos las ventas registrados
+		public function getventa()
 		{
-			$query  ="SELECT * FROM tblproductos";
+			$query  ="SELECT * FROM tblventas";
 			$result =mysqli_query($this->link,$query);
 			$data   =array();
 			while ($data[]=mysqli_fetch_assoc($result));
@@ -25,9 +25,9 @@
 			return $data;
 		}
 
-		//Crea un nuevo producto
-		public function newproducto($data){
-			$query  ="INSERT INTO tblproductos (ID,Nombre,Precio,Descripcion,Imagen) VALUES ('".$data['ID']."','".$data['Nombre']."','".$data['Precio']."','".$data['Descripcion']."','".$data['Imagen']."')";
+		//Crea una nuevo venta
+		public function newventa($data){
+			$query  ="INSERT INTO tblventas (ID,ClaveTransaccion,PaypalDatos,Fecha,Correo,Total,Statu) VALUES ('".$data['ID']."','".$data['ClaveTransaccion']."','".$data['PaypalDatos']."','".$data['Fecha']."','".$data['Correo']."','".$data['Total']."','".$data['Statu']."')";
 			$result =mysqli_query($this->link,$query);
 			if(mysqli_affected_rows($this->link)>0){
 				return true;
@@ -36,10 +36,10 @@
 			}
 		}
 
-		//Obtiene el producto por id
-		public function getproductoById($ID=NULL){
+		//Obtiene la venta por id
+		public function getventaById($ID=NULL){
 			if(!empty($ID)){
-				$query  ="SELECT * FROM tblproductos WHERE ID=".$ID;
+				$query  ="SELECT * FROM tblventas WHERE ID=".$ID;
 				$result =mysqli_query($this->link,$query);
 				$data   =array();
 				while ($data[]=mysqli_fetch_assoc($result));
@@ -50,10 +50,10 @@
 			}
 		}
 
-		//Obtiene el producto por id
-		public function setEditproducto($data){
+		//Obtiene la venta por id
+		public function setEditventa($data){
 			if(!empty($data['ID'])){
-				$query  ="UPDATE tblproductos SET Nombre='".$data['Nombre']."',Precio='".$data['Precio']."', Descripcion='".$data['Descripcion']."',Imagen='".$data['Imagen']."' WHERE ID=".$data['ID'];
+				$query  ="UPDATE tblventas SET ClaveTransaccion='".$data['ClaveTransaccion']."',PaypalDatos='".$data['PaypalDatos']."', Fecha='".$data['Fecha']."',Correo='".$data['Correo']."', Total='".$data['Total']."',Statu='".$data['Statu']."' WHERE ID=".$data['ID'];
 				$result =mysqli_query($this->link,$query);
 				if($result){
 					return true;
@@ -65,10 +65,10 @@
 			}
 		}
 
-		//Borra el producto por id
-		public function deleteproducto($ID=NULL){
+		//Borra la venta por id
+		public function deleteventa($ID=NULL){
 			if(!empty($ID)){
-				$query  ="DELETE FROM tblproductos WHERE ID=".$ID;
+				$query  ="DELETE FROM tblventas WHERE ID=".$ID;
 				$result =mysqli_query($this->link,$query);
 				if(mysqli_affected_rows($this->link)>0){
 					return true;
@@ -81,9 +81,9 @@
 		}
 
 		//Filtro de busqueda
-		public function getproductoBySearch($data=NULL){
+		public function getventaBySearch($data=NULL){
 			if(!empty($data)){
-				$query  ="SELECT * FROM tblproductos WHERE ID LIKE'%".$data."%' OR Nombre LIKE'%".$data."%'";
+				$query  ="SELECT * FROM tblventas WHERE ID LIKE'%".$data."%' OR ClaveTransaccion LIKE'%".$data."%'";
 				$result =mysqli_query($this->link,$query);
 				$data   =array();
 				while ($data[]=mysqli_fetch_assoc($result));
