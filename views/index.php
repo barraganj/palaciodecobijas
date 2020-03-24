@@ -13,7 +13,7 @@
             </head>
 
             <body>
-                <?php include "template/menu.php"; ?>
+                 <?php include "template/menu.php"; ?>
                 <div class="container">
                     <p> Bienvenido  al palacio de las cobijas </p>
                     <div class="container">

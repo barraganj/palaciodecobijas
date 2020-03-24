@@ -1,45 +1,96 @@
-<?php include("conexion.php");
-class producto{
-    function producto(){}
-        function selcon($sql){
-            $conBD = new conexion();
-            $conBD->conectarBD();
-            $conBD->ejecon($sql,2);
-            // $conBD->desconectarBD();
-        }
-        function selcot($sql){
-            $conBD = new conexion();
-            $esa = $conBD->conectarBD();
+<?php
+	include dirname(__file__,2)."/config/conexion.php";
+	/**
+	*
+	*/
+	class producto
+	{
+		private $conn;
+		private $link;
 
-            $data = $conBD->ejecon($sql);
-            // $conBD->desconectarBD();
-            return $data;
-        }
-        function insusu($nombre,$precio,$descripcion,$imagen,$estado,$cantidad){
-            
-            $sql = "INSERT INTO `producto` (`nombre`, `precio`, `descripcion`, `imagen`, `estado`, `cantidadDisponible`) VALUES ('$nombre','$precio','$descripcion','$imagen','1','$cantidad');";
-            //  echo $sql;
-              $this->selcot($sql);
-        }
-        function updusu($nombre,$precio,$descripcion,$imagen,$estado,$cantidad){
-            $sql = "UPDATE producto SET precio='$precio',descripcion='$descripcion',imagen='$imagen',estado=1, cantidadDisponible='cantidad'  WHERE  nombre='$nombre';";
-            // echo $sql;
-              $this->selcon($sql);
-        }
+		function __construct()
+		{
+			$this->conn   = new Conexion();
+			$this->link   = $this->conn->conectarse();
+		}
 
-        function delusu($nombre){
-            $sql="DELETE FROM producto WHERE nombre='$nombre';";
-            // echo $sql;
-              $this->selcon($sql);
-        }
-        
+		//Trae todos los usuarios registrados
+		public function getproductos()
+		{
+			$query  ="SELECT * FROM tblproductos";
+			$result =mysqli_query($this->link,$query);
+			$data   =array();
+			while ($data[]=mysqli_fetch_assoc($result));
+			array_pop($data);
+			return $data;
+		}
 
-        function selrece1($nombre){
-            $sql="SELECT * FROM producto WHERE nombre='$nombre';";
-            // echo $sql;
-             $data = $this->selcot($sql);
-            return $data;
-        }
-}
+		//Crea un nuevo producto
+		public function newproducto($data){
+			$query  ="INSERT INTO tblproductos (ID,Nombre,Precio,Descripcion,Imagen) VALUES ('".$data['ID']."','".$data['Nombre']."','".$data['Precio']."','".$data['Descripcion']."','".$data['Imagen']."')";
+			$result =mysqli_query($this->link,$query);
+			if(mysqli_affected_rows($this->link)>0){
+				return true;
+			}else{
+				return false;
+			}
+		}
 
-?>
+		//Obtiene el producto por id
+		public function getproductoById($ID=NULL){
+			if(!empty($ID)){
+				$query  ="SELECT * FROM tblproductos WHERE ID=".$ID;
+				$result =mysqli_query($this->link,$query);
+				$data   =array();
+				while ($data[]=mysqli_fetch_assoc($result));
+				array_pop($data);
+				return $data;
+			}else{
+				return false;
+			}
+		}
+
+		//Obtiene el producto por id
+		public function setEditproducto($data){
+			if(!empty($data['ID'])){
+				$query  ="UPDATE tblproductos SET Nombre='".$data['Nombre']."',Precio='".$data['Precio']."', Descripcion='".$data['Descripcion']."',Imagen='".$data['Imagen']."' WHERE ID=".$data['ID'];
+				$result =mysqli_query($this->link,$query);
+				if($result){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}
+
+		//Borra el producto por id
+		public function deleteproducto($ID=NULL){
+			if(!empty($id)){
+				$query  ="DELETE FROM tblproductos WHERE ID=".$ID;
+				$result =mysqli_query($this->link,$query);
+				if(mysqli_affected_rows($this->link)>0){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}
+
+		//Filtro de busqueda
+		public function getproductoBySearch($data=NULL){
+			if(!empty($data)){
+				$query  ="SELECT * FROM tblproductos WHERE ID LIKE'%".$data."%' OR Nombre LIKE'%".$data."%'";
+				$result =mysqli_query($this->link,$query);
+				$data   =array();
+				while ($data[]=mysqli_fetch_assoc($result));
+				array_pop($data);
+				return $data;
+			}else{
+				return false;
+			}
+		}
+	}

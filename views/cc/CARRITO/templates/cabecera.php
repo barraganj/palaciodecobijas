@@ -32,6 +32,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="mostrarVentas.php">Ventas</a>
                 </li>
+                <li class="nav-item">
+      <a href="../../palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesion</a>
+      </li>
             </ul>
         </div>
     </nav>

@@ -1,33 +1,38 @@
-<?php include("../models/producto.php");
+<?php
+	include dirname(__file__,2).'/models/producto.php';
 
-$obj = new producto();
-$nombre = isset($_POST["nombre"])  ? $_POST["nombre"]: NULL;
-$precio= isset($_POST["precio"]) ? $_POST["precio"]:NULL;
-$descripcion = isset($_POST["descripcion"])  ? $_POST["descripcion"]: NULL;
-$imagen= isset($_POST["imagen"]) ? $_POST["imagen"]:NULL;
-$estado= isset($_POST["estado"]) ? $_POST["estado"]:NULL;
-$cantidad= isset($_POST["cantidad"]) ? $_POST["cantidad"]:NULL;
+	$productos=new producto();
 
+	//Request: creacion de nuevo producto
+	if(isset($_POST['create']))
+	{
+		if($productos->newproducto($_POST)){
+			header('location: ../views/users/index.php?page=new&success=true');
+		}else{
+			header('location: ../views/users/index.php?page=new&error=true');
+		}
+	}
 
+	//Request: editar producto
+	if(isset($_POST['edit']))
+	{
+		if($productos->setEditproducto($_POST)){
+			header('location: ./index.php?page=edit&ID='.$_POST['ID'].'&success=true');
+		}else{
+			header('location: ./index.php?page=edit&ID='.$_POST['ID'].'&error=true');
+		}
+	}
 
-if(isset($_POST["Registrar"])){
-    $obj->insusu($nombre,$precio,$descripcion,$imagen,$estado,$cantidad);
-    echo "<script>alert('usuario insertado  ')</script>";
-    header ("location:../views/producto.php");
-
-}elseif(isset($_POST["Modificar"])){
-    $obj->updusu($nombre,$precio,$descripcion,$imagen,$estado,$cantidad);
-    echo "<script>alert('Se modifico el usuario ')</script>";
-    header ("location:../views/producto.php");
-
-}elseif(isset($_POST["Consultar"])){
-    $consulta = $obj->selrece1($nombre);
-    echo "<script>alert('los datos son' .$consulta.)</script>";
-
-}elseif(isset($_POST["Eliminar"])){
-    $obj->delusu($nombre);
-    echo "<script>alert(' Se elimino el usuario  ')</script>";
-    header ("location:../views/producto.php");
-}
+	//Request: editar usuario
+	if(isset($_GET['delete']))
+	{
+		if($users->deleteproducto($_GET['ID'])){
+			// header('location: ../index.php?page=users&success=true');
+			echo json_encode(["success"=>true]);
+		}else{
+			// header('location: ../index.php?page=users&&error=true');
+			echo json_encode(["error"=>true]);
+		}
+	}
 
 ?>

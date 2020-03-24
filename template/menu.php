@@ -20,20 +20,19 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="views/index.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ventas.php">Ventas</a>
+        <a class="nav-link" href="views/ventas.php">Ventas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">Productos</a>
+        <a class="nav-link" href="index.php">Productos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="dimicilio.php">Domicilios</a>
+        <a class="nav-link" href="views/dimicilio.php">Domicilios</a>
       </li>
       <li class="nav-item">
-      <a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesion</a>
-      </li>
+			<a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesion</a>
     </ul>
   </div>
 </nav>
