@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palacio de cobijas </title>
+	<link rel="icon" href="../../images/favicon.png" type="img/x-icon">
+</head>
+<body>
+    
+
 <?php 
 include 'global/config.php';
 include 'global/conexion.php';
@@ -71,3 +82,5 @@ include 'templates/cabecera.php';
 <?php 
 include 'templates/pie.php';
 ?>
+</body>
+</html>
