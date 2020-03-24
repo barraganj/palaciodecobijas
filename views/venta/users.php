@@ -41,6 +41,7 @@
 
 		<table class="table table-striped table-bordered table-hover">
 			<thead class="thead-dark">
+				<th class="text-center">ID</th>
 				<th class="text-center">ClaveTransaccion</th>
 				<th class="text-center">PaypalDatos</th>
 				<th class="text-center">Fecha</th>
@@ -59,6 +60,7 @@
 				?>
 
 							<tr id="row<?php echo $value['ID']; ?>">
+								<td><?php echo $value['ID']; ?></td>
 								<td><?php echo $value['ClaveTransaccion']; ?></td>
 								<td><?php echo $value['PaypalDatos']; ?></td>
 								<td><?php echo $value['Fecha']; ?></td>

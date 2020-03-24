@@ -36,6 +36,7 @@
 		<table class="table table-striped table-bordered table-hover">
 			<thead class="thead-dark">
 				<!-- <th>id</th> -->
+				<th class="text-center">ID</th>
 				<th class="text-center">Nombre</th>
 				<th class="text-center">Precio</th>
 				<th class="text-center">Descripcion</th>
@@ -53,6 +54,7 @@
 				?>
 
 							<tr id="row<?php echo $value['ID']; ?>">
+								<td><?php echo $value['ID']; ?></td>
 								<td><?php echo $value['Nombre']; ?></td>
 								<td><?php echo $value['Precio']; ?></td>
 								<td><?php echo $value['Descripcion']; ?></td>

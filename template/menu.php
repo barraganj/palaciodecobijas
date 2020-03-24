@@ -32,7 +32,7 @@
         <a class="nav-link" href="domicilio.php">Domicilios</a>
       </li>
       <li class="nav-item">
-			<a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesion</a>
+			<a href="views/palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesión</a>
     </ul>
   </div>
 </nav>

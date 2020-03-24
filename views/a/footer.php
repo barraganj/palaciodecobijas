@@ -3,7 +3,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col text-center">
-			<p>Placio de cobijas</p>
+			<p>Palacio de cobijas</p>
 		</div>
 	</div>
 </div>
