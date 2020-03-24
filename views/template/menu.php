@@ -29,7 +29,7 @@
         <a class="nav-link" href="../index.php">Productos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="dimicilio.php">Domicilios</a>
+        <a class="nav-link" href="../domicilio.php">Domicilios</a>
       </li>
       <li class="nav-item">
       <a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesion</a>

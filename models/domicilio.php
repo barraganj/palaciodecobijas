@@ -3,7 +3,7 @@
 	/**
 	*
 	*/
-	class producto
+	class domicilio
 	{
 		private $conn;
 		private $link;
@@ -14,10 +14,10 @@
 			$this->link   = $this->conn->conectarse();
 		}
 
-		//Trae todos los usuarios registrados
-		public function getproductos()
+		//Trae todos los domicilios registrados
+		public function getdomicilio()
 		{
-			$query  ="SELECT * FROM tblproductos";
+			$query  ="SELECT * FROM tbldetalleventa";
 			$result =mysqli_query($this->link,$query);
 			$data   =array();
 			while ($data[]=mysqli_fetch_assoc($result));
@@ -25,9 +25,9 @@
 			return $data;
 		}
 
-		//Crea un nuevo producto
-		public function newproducto($data){
-			$query  ="INSERT INTO tblproductos (ID,Nombre,Precio,Descripcion,cantidad,Imagen) VALUES ('".$data['ID']."','".$data['Nombre']."','".$data['Precio']."','".$data['Descripcion']."','".$data['cantidad']."','".$data['Imagen']."')";
+		//Crea una nuevo domicilio
+		public function newdomicilio($data){
+			$query  ="INSERT INTO tbldetalleventa (ID,IDVenta,IDProducto,Precio,Cantidad) VALUES ('".$data['ID']."','".$data['IDVenta']."','".$data['IDProducto']."','".$data['Precio']."','".$data['Cantidad']."')";
 			$result =mysqli_query($this->link,$query);
 			if(mysqli_affected_rows($this->link)>0){
 				return true;
@@ -36,10 +36,10 @@
 			}
 		}
 
-		//Obtiene el producto por id
-		public function getproductoById($ID=NULL){
+		//Obtiene el domiciclio por id
+		public function getdomicilioById($ID=NULL){
 			if(!empty($ID)){
-				$query  ="SELECT * FROM tblproductos WHERE ID=".$ID;
+				$query  ="SELECT * FROM tbldetalleventa WHERE ID=".$ID;
 				$result =mysqli_query($this->link,$query);
 				$data   =array();
 				while ($data[]=mysqli_fetch_assoc($result));
@@ -50,10 +50,10 @@
 			}
 		}
 
-		//Obtiene el producto por id
-		public function setEditproducto($data){
-			if(!empty($data['Nombre'])){
-				$query  ="UPDATE tblproductos SET Nombre='".$data['Nombre']."',Precio='".$data['Precio']."', Descripcion='".$data['Descripcion']."',cantidad='".$data['cantidad']."',Imagen='".$data['Imagen']."' WHERE ID=".$data['ID'];
+		//Obtiene el domicilio por id
+		public function setEditdomicilio($data){
+			if(!empty($data['ID'])){
+				$query  ="UPDATE tbldetalleventa SET IDVenta='".$data['IDVenta']."',IDProducto='".$data['IDProducto']."', Precio='".$data['Precio']."',Cantidad='".$data['Cantidad']."' WHERE ID=".$data['ID'];
 				$result =mysqli_query($this->link,$query);
 				if($result){
 					return true;
@@ -65,10 +65,10 @@
 			}
 		}
 
-		//Borra el producto por id
-		public function deleteproducto($ID=NULL){
+		//Borra el domicilio por id
+		public function deletedomicilio($ID=NULL){
 			if(!empty($ID)){
-				$query  ="DELETE FROM tblproductos WHERE ID=".$ID;
+				$query  ="DELETE FROM tbldetalleventa WHERE ID=".$ID;
 				$result =mysqli_query($this->link,$query);
 				if(mysqli_affected_rows($this->link)>0){
 					return true;
@@ -81,9 +81,9 @@
 		}
 
 		//Filtro de busqueda
-		public function getproductoBySearch($data=NULL){
+		public function getdomicilioBySearch($data=NULL){
 			if(!empty($data)){
-				$query  ="SELECT * FROM tblproductos WHERE ID LIKE'%".$data."%' OR Nombre LIKE'%".$data."%'";
+				$query  ="SELECT * FROM tbldetalleventa WHERE ID LIKE'%".$data."%' OR IDVenta LIKE'%".$data."%'";
 				$result =mysqli_query($this->link,$query);
 				$data   =array();
 				while ($data[]=mysqli_fetch_assoc($result));

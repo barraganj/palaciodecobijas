@@ -1,18 +1,18 @@
 <?php
 
-	include './models/venta.php';
-	$venta  = new venta();
+	include './models/domicilio.php';
+	$domicilio  = new domicilio();
 
 	//Si utiliza el filtro de busqueda
 	if(isset($search)){
-		$ventas = $venta->getventaBySearch($dataSearch);
+		$domicilios = $domicilio->getdomicilioBySearch($dataSearch);
 	}else{
-		//Trae todos las ventas 
+		//Trae todos los domicilios 
 		$dataSearch=NULL;
-		$ventas =$venta->getventa();
+		$domicilios =$domicilio->getdomicilio();
 	}
 
-	$title="Listado de ventas";
+	$title="Listado de domicilios";
 	include 'toolbar.php';
 ?>
 <div class="row">
@@ -33,45 +33,35 @@
 </div>
 <div class="table-responsive">
 
-
-
-
-
-
-
 		<table class="table table-striped table-bordered table-hover">
 			<thead class="thead-dark">
-				<th class="text-center">ClaveTransaccion</th>
-				<th class="text-center">PaypalDatos</th>
-				<th class="text-center">Fecha</th>
-				<th class="text-center">Correo</th>
-				<th class="text-center">Total</th>
-				<th class="text-center">Statu</th>
+				<th class="text-center">IDVenta</th>
+				<th class="text-center">IDProducto</th>
+				<th class="text-center">Precio</th>
+				<th class="text-center">Cantidad</th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 			</thead>
 			<tbody>
 				<?php
 
-					if(count($ventas)>0){
+					if(count($domicilios)>0){
 
-						foreach ($ventas as $column =>$value) {
+						foreach ($domicilios as $column =>$value) {
 				?>
 
 							<tr id="row<?php echo $value['ID']; ?>">
-								<td><?php echo $value['ClaveTransaccion']; ?></td>
-								<td><?php echo $value['PaypalDatos']; ?></td>
-								<td><?php echo $value['Fecha']; ?></td>
-								<td><?php echo $value['Correo']; ?></td>
-								<td><?php echo $value['Total']; ?></td>
-								<td><?php echo $value['Statu']; ?></td>
+								<td><?php echo $value['IDVenta']; ?></td>
+								<td><?php echo $value['IDProducto']; ?></td>
+								<td><?php echo $value['Precio']; ?></td>
+								<td><?php echo $value['Cantidad']; ?></td>
 								<td class="text-center">
-								<a href="./venta.php?page=edit&ID=<?php echo $value['ID'] ?>" title="editar venta: <?php echo $value['ClaveTransaccion'] ?>">
+								<a href="./domicilio.php?page=edit&ID=<?php echo $value['ID'] ?>" title="editar domicilio: <?php echo $value['IDVenta'] ?>">
 										<i class="material-icons btn_edit">edit</i>
 									</a>
 								</td>
 								<td class="text-center">
-									<a href="./venta.php" onclick="btnDeleteventa(<?php echo $value['ID' ] ?>)" ID="btnDeleteventa" title="Borrar venta: <?php echo $value['ClaveTransaccion']  ?>">
+									<a href="./domicilio.php" onclick="btnDeletedomicilio(<?php echo $value['ID' ] ?>)" ID="btnDeletedomicilio" title="Borrar domicilio: <?php echo $value['IDVenta']  ?>">
 										<i class="material-icons btn_delete">delete_forever</i>
 									</a>
 								</td>
@@ -83,7 +73,7 @@
 					<tr>
 						<td colspan="5">
 							<div class="alert alert-info">
-								No se encontraron ventas.
+								No se encontraron domicilios.
 							</div>
 						</td>
 					</tr>
@@ -101,8 +91,8 @@
 	</div>
 <script type="text/javascript">
 
-	function btnDeleteventa(ID){
-		if(confirm("Esta seguro de eliminar la venta ?")){
+	function btnDeletedomicilio(ID){
+		if(confirm("Esta seguro de eliminar el domicilio ?")){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
@@ -111,7 +101,7 @@
 				var msgDanger   = document.getElementById('msgDanger');
 				if(response.success){
 					msgSuccess.style.display = 'inherit';
-					msgSuccess.innerHTML     = 'La venta  ha sido borrado de la base de datos.';
+					msgSuccess.innerHTML     = 'El domicilio  ha sido borrado de la base de datos.';
 					msgDanger.style.display  = 'none';
 
 					var row    = document.getElementById('row'+ID);
@@ -126,7 +116,7 @@
 				}
 			}
 			};
-			xhttp.open("GET", "./controllers/venta.php?delete=true&ID="+ID, true);
+			xhttp.open("GET", "./controllers/domicilio.php?delete=true&ID="+ID, true);
 			xhttp.send();
 		}
 	}

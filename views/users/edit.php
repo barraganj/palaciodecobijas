@@ -14,6 +14,7 @@
     $Nombre = $producto[0]['Nombre'];
     $Precio  = $producto[0]['Precio'];
     $Descripcion = $producto[0]['Descripcion'];
+    $cantidad = $producto[0]['cantidad'];
     $Imagen = $producto[0]['Imagen'];
   }
 
@@ -26,7 +27,7 @@
   </div>
   <div class="form-group">
   	 <label for="last_name">Nombre</label>
-    <input type="number" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required >
+    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required >
   </div>
   <div class="form-group">
   	 <label for="number">Precio</label>
@@ -35,6 +36,10 @@
   <div class="form-group">
   	 <label for="text">Descripcion</label>
     <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Descripcion" required>
+  </div>
+  <div class="form-group">
+  	 <label for="text">cantidad</label>
+    <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="cantidad" required>
   </div>
   <div class="form-group">
   	 <label for="number">Imagen</label>

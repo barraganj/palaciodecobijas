@@ -17,7 +17,9 @@
 ?>
 <div class="row">
 	<div class="col text-center">
-		<i class="material-icons" style="font-size: 80px;">people</i>
+		<i class="material-icons" style="font-size: 80px;"></i>
+
+		<BR></BR>
 	</div>
 </div>
 <div class="row">
@@ -37,6 +39,7 @@
 				<th class="text-center">Nombre</th>
 				<th class="text-center">Precio</th>
 				<th class="text-center">Descripcion</th>
+				<th class="text-center">cantidad</th>
 				<th class="text-center">Imagen</th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
@@ -53,6 +56,7 @@
 								<td><?php echo $value['Nombre']; ?></td>
 								<td><?php echo $value['Precio']; ?></td>
 								<td><?php echo $value['Descripcion']; ?></td>
+								<td><?php echo $value['cantidad']; ?></td>
 								<td><?php echo $value['Imagen']; ?></td>
 								<td class="text-center">
 								<a href="./index.php?page=edit&ID=<?php echo $value['ID'] ?>" title="editar producto: <?php echo $value['Nombre'] ?>">
