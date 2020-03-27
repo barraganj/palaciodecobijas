@@ -27,7 +27,7 @@
                             <div class="col"><img width="1000px" height="500px"  src="images/4.jpg" alt=""></div>
                         </div>
                     </div>
-
+<BR>
                 </div>
 
                 <?php include "template/footer.php"; ?>
