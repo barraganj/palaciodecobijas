@@ -2,12 +2,13 @@
 
 
 $obj = new usuario();
+$nombre = isset($_POST["nombre"])  ? $_POST["nombre"]: NULL;
 $correo = isset($_POST["correoU"])  ? $_POST["correoU"]: NULL;
 $clave= isset($_POST["claveU"]) ? $_POST["claveU"]:NULL;
 
 
 if(isset($_POST["Registrar"])){
-    $obj->insusu($correo,$clave);
+    $obj->insusu($nombre,$correo,$clave);
     echo "<script>alert('usuario insertado  ')</script>";
     header ("location:../views/login/login.php");
 

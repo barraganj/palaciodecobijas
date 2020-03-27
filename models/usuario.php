@@ -15,9 +15,9 @@ class usuario{
             // $conBD->desconectarBD();
             return $data;
         }
-        function insusu($correo,$clave){
+        function insusu($nombre,$correo,$clave){
             
-            $sql = "INSERT INTO `usuario` (`correoUsuario`, `claveUsuario`, `rol`, `estado`) VALUES ('$correo','$clave','cliente',1);";
+            $sql = "INSERT INTO `usuario` (`nombre`,`correoUsuario`, `claveUsuario`, `rol`, `estado`) VALUES ('$nombre','$correo','$clave','cliente',1);";
             //  echo $sql;
               $this->selcot($sql);
         }
