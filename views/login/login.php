@@ -14,11 +14,12 @@
 <!-- partial:index.partial.html -->
 <div class="container">
   <div class="info">
-    <h1 id="letra">Palacio de Cobijas</h1>
+    <p> </p><BR></BR><BR></BR>
   </div>
 </div>
 <div class="form">
-  <div class="thumbnail"><img src="img/icono.png"/></div>
+  <div ><img src="img/logo.png"/><BR></BR><BR></BR></div>
+
   <!-- <form method="POST" action="../../models/verificacionUsuario.php" class="register-form">
     <input type="email" name="correoU" placeholder="Correo"/>
     <input type="password" name="claveU" placeholder="Contraseña"/>

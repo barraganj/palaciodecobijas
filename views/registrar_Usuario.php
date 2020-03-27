@@ -2,42 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palacio de las cobijas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Palacio de Cobijas</title>
+  <link rel="icon" href="login/img/favicon.png" type="img/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="login/style.css">
 
 </head>
 
 <body>
-<?php include "template/menu1.php";?>
-<div style="width: 1200px;height:450px; margin-top:10px;" >
-<div class="container">
-<BR>
-<form method="post" action="../controllers/usuario.php">
-    <h1>Registrate</h1>
-    <BR></BR>
-  <div class="row">
-    <div class="col">
-      <input type="email" name="correoU" class="form-control" placeholder="Correo" required >
-    </div>
-    <div class="col">
-      <input type="password" name="claveU" class="form-control" placeholder="Clave" required>
+
+  <!-- partial:index.partial.html -->
+  <div class="container">
+    <div class="info">
+
     </div>
   </div>
-  <BR></BR>
-  <input type="submit" name="Registrar" class="btn-submit1" value="Agregar Usuario ">
-</form>
-<BR>
+    <div class="form">
+      <div><img src="login/img/logo.png" />
+        <BR></BR><BR></BR></div>
 
-</div>
-</div>
+      <form method="POST" action="../controllers/usuario.php" class="login-form">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="correoU" placeholder="Correo" required>
+        <input type="password" name="claveU" placeholder="Contraseña" required>
+        <button type="submit" name="Registrar" class="btn-submit1"> Registrarse </button>
+      </form>
+    </div>
+    </video>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/script.js"></script>
 
-    <?php include "template/footer.php";?>
 </body>
 
 </html>

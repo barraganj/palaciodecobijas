@@ -23,14 +23,14 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../venta.php">Ventas</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="../venta.php">Ventas<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../index.php">Productos</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="../index.php">Productos<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../domicilio.php">Domicilios</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="../domicilio.php">Domicilios<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
       <a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesión</a>
