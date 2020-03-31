@@ -17,7 +17,7 @@
 		//Trae todos los domicilios registrados
 		public function getdomicilio()
 		{
-			$query  ="SELECT * FROM tbldetalleventa";
+			$query  ="SELECT d.ID,d.IDVenta,p.Nombre,d.Precio,d.Cantidad from tbldetalleventa d, tblproductos p WHERE  p.ID";
 			$result =mysqli_query($this->link,$query);
 			$data   =array();
 			while ($data[]=mysqli_fetch_assoc($result));

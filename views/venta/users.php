@@ -33,12 +33,6 @@
 </div>
 <div class="table-responsive">
 
-
-
-
-
-
-
 		<table class="table table-striped table-bordered table-hover">
 			<thead class="thead-dark">
 				<th class="text-center">ID</th>
