@@ -18,15 +18,15 @@ if(isset($_POST['btnAccion'])){
 
             if(is_string(openssl_decrypt($_POST['nombre'],COD,KEY))){
                 $NOMBRE=openssl_decrypt($_POST['nombre'],COD,KEY);
-                $mensaje.="ok precio".$NOMBRE."<br/>";
+                $mensaje.="ok nombre".$NOMBRE."<br/>";
             }else {
                 $mensaje.="upss.. algo pasa con el nombre"."<br/>";
             break;
             }
 
-            if(is_string(openssl_decrypt($_POST['cantidad'],COD,KEY))){
-                $CANTIDAD=openssl_decrypt($_POST['cantidad'],COD,KEY);
-                $mensaje.="ok precio".$CANTIDAD."<br/>";
+            if(is_numeric($_POST['cantidad'])){
+                $CANTIDAD=($_POST['cantidad']);
+                $mensaje.="ok cantidad correcta".$CANTIDAD."<br/>";
             }else {
                 $mensaje.="upss.. algo pasa con la cantidad"."<br/>";
             break;
@@ -48,7 +48,7 @@ if(isset($_POST['btnAccion'])){
                     'CANTIDAD'=>$CANTIDAD,
                     'PRECIO'=>$PRECIO
                 );
-                $_SESSION['CARRITO'][1]=$producto;
+                $_SESSION['CARRITO'][0]=$producto;
                 
 
             }else{
@@ -74,7 +74,7 @@ if(isset($_POST['btnAccion'])){
                 foreach($_SESSION['CARRITO'] as $indice=>$producto){
                     if($producto['ID']==$ID){
                         unset($_SESSION['CARRITO'][$indice]);
-                        echo "<script>alert('Elemento borrado...');</script>";
+                        //echo "<script>alert('Elemento borrado...');</script>";
                     }
                 }
 

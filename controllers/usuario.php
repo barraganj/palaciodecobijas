@@ -11,7 +11,7 @@ if(isset($_POST["Registrar"])){
     $obj->insusu($nombre,$correo,$clave);
     // echo "<script>alert('usuario insertado  ')</script>";
       include("../views/correo.php");
-    // header ("location:../views/login/login.php");
+    header ("location:../views/login/login.php");
 
 }elseif(isset($_POST["Modificar"])){
     $obj->updusu($correo,$clave);
