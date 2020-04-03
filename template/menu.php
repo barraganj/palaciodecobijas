@@ -39,7 +39,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       
-       <a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesión</a>
+       <a href="views/palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesión</a>
     </form>
   </div>
 </nav>
