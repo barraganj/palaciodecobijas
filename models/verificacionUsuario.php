@@ -1,7 +1,6 @@
 <?php
 
 
-
 session_start();
 
 
@@ -36,3 +35,9 @@ if (isset($_POST) && !empty($_POST)) {
         header('Location: ../views/login/login.php?error');
     }
 }
+
+
+    
+
+   
+
