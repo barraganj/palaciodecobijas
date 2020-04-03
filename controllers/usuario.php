@@ -10,7 +10,8 @@ $clave= isset($_POST["claveU"]) ? $_POST["claveU"]:NULL;
 if(isset($_POST["Registrar"])){
     $obj->insusu($nombre,$correo,$clave);
     // echo "<script>alert('usuario insertado  ')</script>";
-    header ("location:../views/login/login.php");
+      include("../views/correo.php");
+    // header ("location:../views/login/login.php");
 
 }elseif(isset($_POST["Modificar"])){
     $obj->updusu($correo,$clave);

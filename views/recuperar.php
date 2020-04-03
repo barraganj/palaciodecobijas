@@ -25,12 +25,10 @@
     <div><img src="login/img/logo.png" />
       <BR></BR><BR></BR></div>
 
-    <form method="POST" action="../controllers/usuario.php" class="login-form">
+    <form method="POST" action="correo.php" class="login-form">
       <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="text" name="correoU" placeholder="Correo" required>
-      <input type="password" name="claveU" placeholder="Contraseña" required>
-      <button type="submit" name="Registrar" class="btn-submit1"> Registrarse </button>
-      <p class="message"> <a href="../registrar_Usuario.php">Iniciar Sesión</p>
+      <p class="message"> <a href="correo.php">Recuperar Contraseña</p>
     </form>
     
   </div>

@@ -8,9 +8,9 @@ $clave= isset($_POST["claveU"]) ? $_POST["claveU"]:NULL;
 $destinatario = $correo;
 $asunto = "Creasion de cuenta en el  palacio de las cobijas ";
 
-$carta =" Hola amigo gracias por registrarteb a nuestra pagina ";
+$carta =" Hola amigo gracias por registrarteb a nuestra pagina el usuario es ${correo} y la contraseña es ${clave} ";
 
 //Enviando Mensaje 
 mail($destinatario,$asunto,$carta);
-// header('Location:index.php')
+header('Location:views/login/login.php')
 ?>

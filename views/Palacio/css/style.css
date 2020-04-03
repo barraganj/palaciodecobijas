@@ -7544,7 +7544,7 @@ html.tablet .ui-to-top {
     right: 100%;
     width: 10px;
     height: 3px;
-    background: #615F5F;
+    background: #ff8000;
     opacity: 0;
     transition: all .2s ease, right 0s ease .2s;
 }
