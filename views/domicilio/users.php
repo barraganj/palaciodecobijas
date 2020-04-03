@@ -37,7 +37,7 @@
 			<thead class="thead-dark">
 				<th class="text-center">ID</th>
 				<th class="text-center">IDVenta</th>
-				<th class="text-center">IDProducto</th>
+				<th class="text-center">Nombre Producto</th>
 				<th class="text-center">Precio</th>
 				<th class="text-center">Cantidad</th>
 				<th>&nbsp;</th>
@@ -54,7 +54,7 @@
 							<tr id="row<?php echo $value['ID']; ?>">
 								<td><?php echo $value['ID']; ?></td>
 								<td><?php echo $value['IDVenta']; ?></td>
-								<td><?php echo $value['IDProducto']; ?></td>
+								<td><?php echo $value['Nombre']; ?></td>
 								<td><?php echo $value['Precio']; ?></td>
 								<td><?php echo $value['Cantidad']; ?></td>
 								<td class="text-center">

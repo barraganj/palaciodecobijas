@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palacio de cobijas </title>
+
+    <link rel="icon" href="images/favicon.png" type="img/x-icon">
+</head>
+
+<body>
+
 <?php
 include 'global/config.php';
 include 'global/conexion.php';
@@ -18,7 +31,7 @@ if ($_POST) {
     
     
     $sentencia = $pdo->prepare("INSERT INTO `tblventas` 
-            (`ID`, `ClaveTransaccion`, `PaypalDatos`, `Fecha`, `Correo`, `Total`, `Status`) 
+            (`ID`, `ClaveTransaccion`, `PaypalDatos`, `Fecha`, `Correo`, `Total`, `Statu`) 
     VALUES (NULL, :ClaveTransaccion, '', NOW(),:Correo, :Total, 'pendiente');");
     
     $sentencia->bindParam(":ClaveTransaccion", $SID);
@@ -107,6 +120,8 @@ if ($_POST) {
         <strong>(para aclaraciones : numero de la empresa)</strong>
         </p>
 </div>
+</body>
+</html>
 
 
 

@@ -18,21 +18,17 @@
   <!-- partial:index.partial.html -->
   <div class="container">
     <div class="info">
-<br>
+
     </div>
   </div>
   <div class="form" style="top: 50px">
     <div><img src="login/img/logo.png" />
       <BR></BR><BR></BR></div>
-      <h1 style="color:white"; fonts-size:20px >Registrarse </h1>
-      <br>
-      <br>
-    <form method="POST" action="../controllers/usuario.php" class="login-form">
+
+    <form method="POST" action="correo.php" class="login-form">
       <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="text" name="correoU" placeholder="Correo" required>
-      <input type="password" name="claveU" placeholder="Contraseña" required>
-      <button type="submit" name="Registrar" class="btn-submit1"> Registrar </button>
-      <p class="message">¿Ya tiene cuenta? <a href="login/login.php">Ingresar</p>
+      <p class="message"> <a href="correo.php">Recuperar Contraseña</p>
     </form>
     
   </div>
