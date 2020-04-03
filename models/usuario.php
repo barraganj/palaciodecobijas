@@ -1,4 +1,6 @@
-<?php include("conexion.php");
+<?php  
+include("conexion.php");
+ 
 class usuario{
     function usuario(){}
         function selcon($sql){
@@ -40,6 +42,8 @@ class usuario{
              $data = $this->selcot($sql);
             return $data;
         }
+
+       
 }
 
 ?>

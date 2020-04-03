@@ -18,32 +18,34 @@
     $Imagen = $producto[0]['Imagen'];
   }
 
-	include 'toolbar.php';
+  include 'toolbar.php';
+  
+  foreach ($producto as $column => $value) {
 ?>
 <form action="./controllers/producto.php" method="POST">
 <div class="form-group">
   	 <label for="name">ID</label>
-    <input class="form-control" id="ID" name="ID" placeholder="ID" autofocus required>
+    <input class="form-control" id="ID" name="ID"  value='<?php echo $value['ID'] ?>' autofocus required>
   </div>
   <div class="form-group">
   	 <label for="last_name">Nombre</label>
-    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required >
+    <input type="text" class="form-control" id="Nombre" name="Nombre"  value='<?php echo $value['Nombre'] ?>' required >
   </div>
   <div class="form-group">
   	 <label for="number">Precio</label>
-    <input type="number" class="form-control" id="Precio" name="Precio" placeholder="Precio" required >
+    <input type="number" class="form-control" id="Precio" name="Precio"  value='<?php echo $value['Precio'] ?>'required >
   </div>
   <div class="form-group">
   	 <label for="text">Descripcion</label>
-    <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Descripcion" required>
+    <input type="text" class="form-control" id="Descripcion" name="Descripcion"  value='<?php echo $value['Descripcion'] ?>' required>
   </div>
   <div class="form-group">
   	 <label for="text">cantidad</label>
-    <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="cantidad" required>
+    <input type="number" class="form-control" id="cantidad" name="cantidad" value='<?php echo $value['cantidad'] ?>' required>
   </div>
   <div class="form-group">
   	 <label for="number">Imagen</label>
-    <input type="text" class="form-control" id="Imagen" name="Imagen" placeholder=" Imagen" required >
+    <input type="text" class="form-control" id="Imagen" name="Imagen"  value='<?php echo $value['Imagen'] ?>' required >
   </div>
   <div class="form-group text-center">
   	<input type="submit" name="edit" value="Editar" class="btn btn-primary">
@@ -62,7 +64,8 @@
 				Ha ocurrido un error al editar la información, por favor intente de nuevo.
 			</div>
 	<?php
-  		}
+      }
+    }
   	?>
   </div>
   <input type="hidden" name="ID" value="<?php echo $ID ?>">

@@ -26,10 +26,12 @@
     <input type="submit" name="Registrar" class="btn-submit1" value="Registrar">
     <p class="message">¿Ya está registrado? <a href="#">Iniciar Sesión</a></p>
   </form> -->
+  <h1 style="color:white"; fonts-size:20px >Iniciar Sesion </h1>
+  <BR></BR>
   <form method="POST" action="../../models/verificacionUsuario.php" class="login-form">
     <input type="text" name="usuario" placeholder="Correo" required>
     <input type="password" name="clave" placeholder="Contraseña" required>
-    <button type="submit">Iniciar Sesión</button>
+    <button type="submit">Ingresar</button>
     <p class="message">¿No está registrado? <a href="../registrar_Usuario.php"> Crear una cuenta</p>
   </form>
 </div>

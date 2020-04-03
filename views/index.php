@@ -17,15 +17,28 @@
             <body>
                  <?php include "template/menu.php"; ?>
                 <div class="container">
-                    <h4> Bienvenido  al palacio de las cobijas </h4>
-                    <div class="container">
-                        <!-- <div class="row">
+                    <h4 style="text-align:center;" > Bienvenido  al palacio de las cobijas </h4>
+                    <BR></BR>
+                        <div class="row">
+                            <!-- <div class="row">
                             <div class="col"><img width="300px" height="200px" src="images/1.jpg" alt=""></div>
                             <div class="col"><img  width="300px" height="200px"  src="images/2.jpg" alt=""></div>
                             <div class="w-100 "></div>
                             <div class="col"><img width="300px" height="200px"  src="images/3.jpg" alt=""></div> -->
-                            <div class="col"><img width="1000px" height="500px"  src="images/4.jpg" alt=""></div>
-                        </div>
+
+                            <div class="col-6"><h5 style="text-align:center;grow:2px;">Inicio</h5><a href="index.php"><img width="400px" height="300px"  src="images/4.jpg" alt=""></a></div>
+                            
+                            <div class="col-6"><h5 style="text-align:center;grow:2px;">Ventas</h5><a href="../venta.php"><img width="400px" height="300px"  src="images/5.jpg" alt=""></a></div>
+                            
+                            
+                            <div class="row"></div>
+                            
+                            <div class="col-6"><h5 style="text-align:center;grow:2px;">Productos</h5><a href="../index.php"><img width="400px" height="300px"  src="images/2.jpg" alt=""></a></div>
+                            
+                            <div class="col-6"><h5 style="text-align:center;grow:2px;">Domicilios</h5><a href="../domicilio.php"><img width="400px" height="300px"  src="images/8.jpg" alt=""></a></div>
+                            
+                            </div>
+                            </div>
                     </div>
 <BR>
                 </div>

@@ -1,5 +1,5 @@
-<?php include("../models/usuario.php");
-
+<?php 
+include("../models/usuario.php");
 
 $obj = new usuario();
 $nombre = isset($_POST["nombre"])  ? $_POST["nombre"]: NULL;
@@ -10,6 +10,10 @@ $clave= isset($_POST["claveU"]) ? $_POST["claveU"]:NULL;
 if(isset($_POST["Registrar"])){
     $obj->insusu($nombre,$correo,$clave);
     // echo "<script>alert('usuario insertado  ')</script>";
+<<<<<<< HEAD
+=======
+      include("../views/correo.php");
+>>>>>>> 2ad7a0877fdad5e0a1a296b91d5b42e39458f263
     header ("location:../views/login/login.php");
 
 }elseif(isset($_POST["Modificar"])){
