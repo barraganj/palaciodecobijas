@@ -24,7 +24,7 @@
 
         <!-- Content -->
 <br>
-<h5 class="text-uppercase">Todos los derechos recervador para nosotros</h5>
+<h6 class="text-uppercase" style="color: #9b9b9b">Copyright:2020 Palacio de Cobijas</h6>
         <!-- <a class="navbar-brand" href="#"><img width="150px" height="60px" src="images/logo.png" alt=""></a> -->
       </div>
       <!-- Grid column -->
