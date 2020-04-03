@@ -24,7 +24,8 @@
 
         <!-- Content -->
 <br>
-        <a class="navbar-brand" href="#"><img width="150px" height="60px" src="images/logo.png" alt=""></a>
+<h5 class="text-uppercase">Todos los derechos recervador para nosotros</h5>
+        <!-- <a class="navbar-brand" href="#"><img width="150px" height="60px" src="images/logo.png" alt=""></a> -->
       </div>
       <!-- Grid column -->
 
@@ -58,9 +59,9 @@
       <div class="col-md-3 mb-md-0 mb-3">
 <br> 
         <!-- Links -->
-        <h5 class="text-uppercase">Contactanos</h5>
+        <!-- <h5 class="text-uppercase">Todos los derechos recervador para nosotros </h5> -->
 
-        <ul class="list-unstyled">
+        <!-- <ul class="list-unstyled">
           <li>
             <a href="#!">Direccio: calle 23 # 68 -98</a>
           </li>
@@ -71,7 +72,7 @@
             <a href="#!">Correo: palciodecobijas@gmail.com</a>
           </li>
           
-        </ul>
+        </ul> -->
 
       </div>
       <!-- Grid column -->

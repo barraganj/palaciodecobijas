@@ -13,26 +13,29 @@
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand "><img width="150px" height="60px" src="images/logo.png" alt=""></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<a class="navbar-brand" href="#"><img width="180px" height="60px" src="images/logo.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="views/index.php">Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="views/index.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="venta.php">Ventas<span class="sr-only">(current)</span></a>
+       <a class="nav-link" href="venta.php">Ventas<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item active">
+       <a class="nav-link" href="index.php">Productos<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Productos<span class="sr-only">(current)</span></a>
+         <a class="nav-link" href="domicilio.php">Domicilios<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="domicilio.php">Domicilios<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-			<a href="views/palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesión</a>
     </ul>
+    <form class="form-inline my-2 my-lg-0">
+      
+       <a href="palacio/index.html" class="btn btn-outline-success my-2 my-sm-0">Cerrar Sesión</a>
+    </form>
   </div>
 </nav>
